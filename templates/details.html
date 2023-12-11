@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div style="text-align: center;  padding: 20px;">
+  <h1 style="font-size: 24px; color:#343A40;"><b>{{movie.name}}</b></h1>
+  <div style="text-align: left;">
+    <img src="{{movie.img.url}}" width="360" height="240" style="float: left; margin-right: 10px;">
+    <p style="font-size: 18px; color: #343A40;">{{movie.desc}}</p>
+  </div>
+</div>
+<button type="button" class="btn btn-secondary"><a style="color:white; text-decoration:none;" href="{% url 'movieapp:update' movie.id %}">Update</a></button>
+<button type="button" class="btn btn-secondary"><a style="color:white; text-decoration:none;" href="{% url 'movieapp:delete' movie.id %}">Delete</a></button>
+{% endblock %}

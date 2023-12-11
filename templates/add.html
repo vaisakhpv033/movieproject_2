@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<div style=" padding: 20px; border: 2px solid #343A40; background-color:#809D98; width: max-content;  position: absolute;top:50%; left:50%; transform: translate(-50%, -50%);" >
+  <h1 style="font-size: 24px; color: #333; text-align:center;margin-bottom: 20px;"><b>MOVIE DETAILS</b></h1>
+  <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="text" name="name" style="display: block; margin-bottom: 20px; width: 100%;" placeholder="Enter your movie name">
+      <textarea name="description" style="display: block; margin-bottom: 20px; width: 100%;" placeholder="Enter the movie details"></textarea>
+      <input type="number" name="year" style="display: block; margin-bottom: 20px; width: 100%;" min="1800" placeholder="Year">
+      <label style="color:#343A40;"><strong>Movie Image</strong></label>
+      <input type="file" name="img" style=" margin-bottom: 20px; width: 100%;"><br>
+      <input type="submit" style="display: block; margin-bottom: 10px; width: 100%;">
+  </form>
+</div>
+{% endblock %}
